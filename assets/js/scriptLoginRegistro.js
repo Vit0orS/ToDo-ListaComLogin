@@ -91,7 +91,7 @@ async function criaConta(nome, email, senha) {
         console.error("Não foi possível criar o usuário");
         return;
     }
-    window.location.href = "paginaSucessoCadastro.html" + `?nome=${nome}`;
+    window.location.href = "paginaSucessoCadastro.html" + `?email=${email}`;
 }
 
 async function logaConta(){
@@ -110,7 +110,7 @@ async function logaConta(){
 
         dados.forEach(dado => {
             if(dado.email==email&&dado.senha==senhaCriptografada){
-                window.location.href = "paginaSucessoLogin.html" + `?nome=${dado.nome}`;
+                window.location.href = "paginaSucessoLogin.html" + `?email=${dado.email}`;
                 contaEncontrada=true;
             }
         })
@@ -137,13 +137,12 @@ function pegaDados(){
     })
 }
 
-function pegaNome(){
+function loginSucesso(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
+    localStorage.setItem("user", urlParams.get('email'));
 
-    const paragrafo = document.querySelector(".texto__bemvindo");
-    
-    if(urlParams.get('nome')!=null){
-        paragrafo.textContent = "Bem vindo(a), "+urlParams.get('nome')+"!";
-    }
+    setTimeout(() => {
+        window.location.href="../../telas/listas.html"
+    }, 3000);
 }

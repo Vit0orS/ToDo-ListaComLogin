@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - Site</title>
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!-- Fontes -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-
-    </head>
-    <body>
-        <main>
-            <section class="main-flex-container">
-                <form class="form__principal form-flex-container">
-                    <h1 class="texto__descritivo">Login</h1>
-                    <hr>
-                    <div>
-                        <label class="input__labels" for="email">E-mail:</label>
-                        <input class="inputs input__email" type="text" onfocusin="removeErroLogin()" placeholder="seuemail@dominio.com" name="email" required>
-                    </div>
-                    <div>
-                        <label class="input__labels" for="senha">Senha:</label>
-                        <input class="inputs input__senha" type="password" onfocusin="removeErroLogin()" placeholder="***********" name="senha" required>
-                    </div>
-                    <button onclick="logaConta()" class="botao__submit--entrar" type="submit">Entrar</button>
-                    <p class="erroLogin"></p>
-                    <a class="link__novoCadastro" href="registro.html">Novo Cadastro</a>
-                </form>
-            </section>
-        </main>
-
-        <script src="assets/js/script.js"></script>
-        <script src="assets/js/cifraCesar.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento</title>
+</head>
+<body onload="redirect()">
+</body>
+<script>
+    function redirect(){
+        if(localStorage.getItem("email")==null||localStorage.getItem("email")==""){
+            window.location.href="telas/login.html";
+        }
+        else {
+            window.location.href="telas/listas.html";
+        }
+    }
+</script>
 </html>
