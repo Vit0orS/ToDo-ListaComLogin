@@ -17,6 +17,10 @@ button {
     margin-top: 2em;
 }
 
+.conta {
+    margin-top: 2em;
+}
+
 .logo-principal {
     width: 30em;
     user-select: none;
@@ -31,12 +35,13 @@ button {
     user-select: none;
 }
 
-.item-lista-nav a {
+.item-lista-nav a, .conta a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
-.item-lista-nav a:hover {
+.item-lista-nav a:hover, .conta a:hover {
     color: rgb(17, 80, 122);
 }
 

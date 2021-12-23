@@ -1,10 +1,11 @@
 const lista = document.getElementsByClassName('lista-tarefas')[0];
 
-async function loadListas(){
+async function load(){
     if(localStorage.getItem("user")==null||localStorage.getItem("user")==""){
         window.location.href="../../telas/login.html"
     } else {
         direction = localStorage.getItem("direction");
+        document.querySelector(".logadoComo").textContent = `Logado como: ${localStorage.getItem("user")} |`
         if (direction!=""){
             const directionList = document.getElementsByClassName("lista-tarefas")[0];
             directionList.style.flexDirection = direction;
@@ -115,4 +116,9 @@ async function setConcluido(id){
         elemento.style.textDecoration = "";
         listaUpdate(dado.id, dado.texto, dado.cor, "");
     }
+}
+
+function desconectar(){
+    localStorage.removeItem("user");
+    window.location.href="../../telas/login.html"
 }
