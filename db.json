@@ -1,0 +1,48 @@
+{
+  "lista": [
+    {
+      "texto": "testee",
+      "cor": "#7c7cf6",
+      "textDecoration": "",
+      "id": 1
+    },
+    {
+      "texto": "qwerty",
+      "cor": "#9c9cba",
+      "textDecoration": "",
+      "id": 3
+    },
+    {
+      "texto": "zxczxczxc",
+      "cor": "#8fff05",
+      "textDecoration": "line-through",
+      "id": 4
+    }
+  ],
+  "accounts": [
+    {
+      "nome": "Vitor",
+      "email": "vitor@email.com",
+      "senha": "cpavy@123",
+      "id": 1
+    },
+    {
+      "nome": "Vitor da Silveira",
+      "email": "vitorr@email.com",
+      "senha": "Cpavy@hij1",
+      "id": 2
+    },
+    {
+      "nome": "Teste",
+      "email": "teste@email.com",
+      "senha": "@alzal123",
+      "id": 3
+    },
+    {
+      "nome": "Vitor",
+      "email": "vitor@dominio.com",
+      "senha": "alzal@123",
+      "id": 4
+    }
+  ]
+}

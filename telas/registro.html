@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Site</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <section class="main-flex-container">
+            <form novalidate class="form__principal form-flex-container">
+                <p class="texto__descritivo">Registrar nova conta</p>
+                <hr>
+                <div>
+                    <label class="input__labels" for="nome">Nome:</label>
+                    <input class="inputs input__nome" type="text" onblur="validaInput('nome')" onfocusin="removeErro('nome')" placeholder="Insira seu nome" name="nome" required>
+                    <p class="input__invalido input__invalido--nome"></p>
+                </div>
+                <div>
+                    <label class="input__labels" for="email">E-mail:</label>
+                    <input class="inputs input__email" type="text" onblur="validaInput('email')" onfocusin="removeErro('email')" placeholder="seuemail@dominio.com" name="email" pattern="^([\w-]\.?)+@([\w-]+\.)+([A-Za-z]{2,4})+$" required>
+                    <p class="input__invalido input__invalido--email"></p>
+                </div>
+                <div>
+                    <label class="input__labels" for="senha">Senha:</label>
+                    <input class="inputs input__senha" type="password" onblur="validaInput('senha')" onfocusin="removeErro('senha')" placeholder="***********" name="senha" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required>
+                    <p class="input__invalido input__invalido--senha"></p>
+                </div>
+                <button class="botao__submit--registrar" type="submit" onclick="registrar()">Registrar</button>
+                <a class="link__jaCadastrado" href="index.html">Já é cadastrado?</a>
+            </form>
+        </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cifraCesar.js"></script>
+</body>
+</html>

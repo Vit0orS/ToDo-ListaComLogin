@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>ToDo - Lista de Tarefas</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Vitor da Silveira">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/ToDo-logos_white.png"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/styleLista.css">
+        
+        <!-- Fontes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Montserrat&family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Fuzzy+Bubbles&family=Montserrat&family=Pacifico&display=swap" rel="stylesheet">
+        <!-- Fim fontes -->
+
+    </head>
+    <body onload="loadListas()">
+        <nav class="menu-navegacao">
+            <h1><img class="logo-principal" src="../img/ToDo-logos_transparent.png" alt="Imagem logo ToDo"></h1>
+            <ul class="lista-navegacao">
+                <li class="item-lista-nav"><a href="index.html">Home</a></li><li class="item-lista-nav botao-muda-direction" onclick="mudaDirection()">Coluna</li><li class="item-lista-nav"><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="section-add-item">
+                <button class="botao-principal" onclick="mostraMenuItem()">Novo item</button>
+                <section class="menu-add-item">
+                    <form class="novo-item">
+                        <textarea rows="4" class="input-lista" placeholder="  Novo item..."></textarea>
+
+                        <label for="cor-novo-item" class="label-cor">Cor de fundo:</label>
+                        <input value="#7c7cf6" class="cor-novo-item" name="cor-novo-item" type="color">
+                        
+                        <input style="display: none;" id="id-form" readonly type="number">
+
+                        <button type="submit" class="botao-principal" onclick="adicionaLista()">Enviar</button>
+                        <button class="botao-principal botao-cancelar" class="botao-cancelar" onclick="cancelaEdicao()">Cancelar</button>  
+                    </form>
+                    
+                </section>
+            </section>
+        </main>
+
+        <section>
+            <ul class="lista-tarefas">
+                <!-- Tarefas -->
+            </ul>
+        </section>
+
+        <script src="../js/script.js"></script>
+        <script src="../controller/controller.js"></script>
+    </body>
+</html>
