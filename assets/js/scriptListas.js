@@ -1,22 +1,26 @@
 const lista = document.getElementsByClassName('lista-tarefas')[0];
 
 async function loadListas(){
-    direction = localStorage.getItem("direction");
-    if (direction!=""){
-        const directionList = document.getElementsByClassName("lista-tarefas")[0];
-        directionList.style.flexDirection = direction;
-        const botao = document.getElementsByClassName("botao-muda-direction")[0];
-        if(directionList.style.flexDirection!="row"){
-            botao.innerText = "Coluna";
-        } else {
-            botao.innerText = "Linha";
+    if(localStorage.getItem("user")==null||localStorage.getItem("user")==""){
+        window.location.href="../../telas/login.html"
+    } else {
+        direction = localStorage.getItem("direction");
+        if (direction!=""){
+            const directionList = document.getElementsByClassName("lista-tarefas")[0];
+            directionList.style.flexDirection = direction;
+            const botao = document.getElementsByClassName("botao-muda-direction")[0];
+            if(directionList.style.flexDirection!="row"){
+                botao.innerText = "Coluna";
+            } else {
+                botao.innerText = "Linha";
+            }
         }
-    }
-    const dados = await listaGet("");
+        const dados = await listaGet("");
 
-    dados.forEach(element => {
-        criaElemento(element.texto, element.cor, element.id, element.textDecoration);
-    });
+        dados.forEach(element => {
+            criaElemento(element.texto, element.cor, element.id, element.textDecoration);
+        });
+    }
 }
 
 function criaElemento(texto, color, id, textDecoration){

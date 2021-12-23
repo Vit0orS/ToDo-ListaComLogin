@@ -144,5 +144,5 @@ function loginSucesso(){
 
     setTimeout(() => {
         window.location.href="../../telas/listas.html"
-    }, 3000);
+    }, 5000);
 }
