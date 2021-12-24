@@ -49,11 +49,11 @@ async function adicionaLista(){
     const color = document.getElementsByClassName('cor-novo-item')[0].value;
     const id = document.getElementById("id-form").value;
     const user = localStorage.getItem("user");
-    const dado = await listaGet(id);
     if (id==""){
         listaPost(texto, color, user);
     }
     else {
+        const dado = await listaGet(id);
         listaUpdate(id, texto, color, dado.textDecoration, user);
     }
 }
