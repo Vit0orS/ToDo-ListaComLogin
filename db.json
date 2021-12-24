@@ -1,5 +1,26 @@
 {
   "lista": [
+    {
+      "texto": "tesst",
+      "cor": "#7c7cf6",
+      "textDecoration": "",
+      "user": "",
+      "id": 1
+    },
+    {
+      "texto": "teste",
+      "cor": "#00ff91",
+      "textDecoration": "",
+      "user": "vitor@email.com",
+      "id": 2
+    },
+    {
+      "texto": "teste2",
+      "cor": "#7c7cf6",
+      "textDecoration": "line-through",
+      "user": "vitor@email.com",
+      "id": 3
+    }
   ],
   "accounts": [
     {

@@ -19,7 +19,9 @@ async function load(){
         const dados = await listaGet("");
 
         dados.forEach(element => {
-            criaElemento(element.texto, element.cor, element.id, element.textDecoration);
+            if(element.user==localStorage.getItem("user")){
+                criaElemento(element.texto, element.cor, element.id, element.textDecoration);
+            }
         });
     }
 }
@@ -44,13 +46,13 @@ async function adicionaLista(){
     const texto = document.getElementsByClassName('input-lista')[0].value;
     const color = document.getElementsByClassName('cor-novo-item')[0].value;
     const id = document.getElementById("id-form").value;
+    const user = localStorage.getItem("user");
     const dado = await listaGet(id);
-    console.log(dado.textDecoration)
     if (id==""){
-        listaPost(texto, color, "");
+        listaPost(texto, color, user);
     }
     else {
-        listaUpdate(id, texto, color, dado.textDecoration);
+        listaUpdate(id, texto, color, dado.textDecoration, user);
     }
 }
 
@@ -111,10 +113,10 @@ async function setConcluido(id){
     dado = await listaGet(id);
     if(elemento.style.textDecoration!="line-through"){
         elemento.style.textDecoration = "line-through";
-        listaUpdate(dado.id, dado.texto, dado.cor, "line-through");
+        listaUpdate(dado.id, dado.texto, dado.cor, "line-through", localStorage.getItem("user"));
     } else {
         elemento.style.textDecoration = "";
-        listaUpdate(dado.id, dado.texto, dado.cor, "");
+        listaUpdate(dado.id, dado.texto, dado.cor, "", localStorage.getItem("user"));
     }
 }
 

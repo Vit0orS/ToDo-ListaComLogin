@@ -1,4 +1,4 @@
-function listaPost(texto, cor){
+function listaPost(texto, cor, user){
     return fetch(`http://localhost:3000/lista/`, {
         method: 'POST',
         headers: {
@@ -7,7 +7,8 @@ function listaPost(texto, cor){
         body: JSON.stringify({
             texto: texto,
             cor: cor,
-            textDecoration: ""
+            textDecoration: "",
+            user: user
         })
     })
 }
@@ -33,7 +34,7 @@ async function listaGet(id){
     })
 }
 
-function listaUpdate(id, texto, cor, textDecoration){
+function listaUpdate(id, texto, cor, textDecoration, user){
     return fetch(`http://localhost:3000/lista/${id}`, {
         method: 'PUT',
         headers: {
@@ -42,7 +43,8 @@ function listaUpdate(id, texto, cor, textDecoration){
         body: JSON.stringify({
             texto: texto,
             cor: cor,
-            textDecoration: textDecoration
+            textDecoration: textDecoration,
+            user: user
         })
     })
     .then( resposta => {
