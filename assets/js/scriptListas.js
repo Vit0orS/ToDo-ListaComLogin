@@ -5,7 +5,8 @@ async function load(){
         window.location.href="../../telas/login.html"
     } else {
         direction = localStorage.getItem("direction");
-        document.querySelector(".logadoComo").textContent = `Logado como: ${localStorage.getItem("user")} |`
+        document.querySelector(".logadoComo").textContent = `Logado como: ${localStorage.getItem("user")} |`;
+
         if (direction!=""){
             const directionList = document.getElementsByClassName("lista-tarefas")[0];
             directionList.style.flexDirection = direction;
@@ -16,6 +17,7 @@ async function load(){
                 botao.innerText = "Linha";
             }
         }
+
         const dados = await listaGet("");
 
         dados.forEach(element => {
@@ -77,11 +79,12 @@ async function editaElemento(id){
 }
 
 function cancelaEdicao(){
+    event.preventDefault();
     document.getElementById("id-form").value = "";
     document.getElementsByClassName("botao-cancelar")[0].style.display = "none";
-    menuItem.style.display = "none";
+    document.getElementsByClassName("novo-item")[0] = "none";
     document.getElementsByClassName("input-lista")[0].value = "";
-    document.getElementsByClassName("cor-novo-item")[0].value = "";
+    document.getElementsByClassName("cor-novo-item")[0].value = "#7c7cf6";
 }
 
 function mostraMenuItem(){

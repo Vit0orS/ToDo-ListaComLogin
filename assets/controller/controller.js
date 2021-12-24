@@ -30,7 +30,7 @@ async function listaGet(id){
         if(resposta.ok){
             return resposta.json();
         }
-        throw new Error('Não foi acessar os itens');
+        throw new Error('Não foi possível acessar os itens');
     })
 }
 
