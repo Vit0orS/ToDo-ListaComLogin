@@ -1,64 +1,26 @@
 {
   "lista": [
     {
-      "texto": "tesst",
-      "cor": "#7c7cf6",
+      "texto": "Olá!",
+      "cor": "#ff4000",
       "textDecoration": "",
-      "user": "",
+      "user": "Vitor@email.com",
       "id": 1
     },
     {
-      "texto": "teste5",
-      "cor": "#7c7cf6",
-      "textDecoration": "line-through",
-      "user": "vitor@email.com",
-      "id": 3
-    },
-    {
-      "texto": "teste",
-      "cor": "#7c7cf6",
+      "texto": "Isso é um texto.",
+      "cor": "#ff00dd",
       "textDecoration": "",
-      "user": "vitor@email.com",
-      "id": 4
-    },
-    {
-      "texto": "qweqweqwe",
-      "cor": "#333333",
-      "textDecoration": "",
-      "user": "vitor@email.com",
-      "id": 5
+      "user": "Vitor@email.com",
+      "id": 2
     }
   ],
   "accounts": [
     {
       "nome": "Vitor",
-      "email": "vitor@email.com",
-      "senha": "cpavy@123",
+      "email": "Vitor@email.com",
+      "senha": "c@j3kljpmyvbvaleav",
       "id": 1
-    },
-    {
-      "nome": "Vitor da Silveira",
-      "email": "vitorr@email.com",
-      "senha": "Cpavy@hij1",
-      "id": 2
-    },
-    {
-      "nome": "Teste",
-      "email": "teste@email.com",
-      "senha": "@alzal123",
-      "id": 3
-    },
-    {
-      "nome": "Vitor",
-      "email": "vitor@dominio.com",
-      "senha": "alzal@123",
-      "id": 4
-    },
-    {
-      "nome": "teste",
-      "email": "teste@dominio.com",
-      "senha": "alzal@23",
-      "id": 5
     }
   ]
 }
