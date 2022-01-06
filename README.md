@@ -12,6 +12,7 @@
 - - - [ ] Dados da conta.
 - - - [ ] Quantos itens a conta tem.
 ---
+- - [ ] Criar a possibilidade de trocar a senha
 - - [ ] Criar a possibilidade de deletar a própria conta 
 ---
 - - [ ] Possibilidade de criar listas diferentes para cada conta (?)
