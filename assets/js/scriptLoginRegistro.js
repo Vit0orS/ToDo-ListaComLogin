@@ -96,28 +96,30 @@ async function criaConta(nome, email, senha) {
 
 async function logaConta(){
     event.preventDefault();
+    let contaEncontrada = false;
 
     if(ntentativas>=5){
         document.querySelector(".erroLogin").textContent = "Número máximo de tentativas alcançado...";
     } else {
-        let contaEncontrada = false;
 
         const email = document.querySelector(`.input__email`).value;
         const senha = document.querySelector(`.input__senha`).value;
         const senhaCriptografada = CifraCesar(senha);
 
-        const dados = await pegaDados();
-
-        dados.forEach(dado => {
-            if(dado.email==email&&dado.senha==senhaCriptografada){
-                window.location.href = "paginaSucessoLogin.html" + `?email=${dado.email}`;
-                contaEncontrada=true;
+        fetch(`http://localhost:3000/accounts?email=${email}&senha=${senhaCriptografada}`)
+        .then( resposta => {
+            resposta.json()
+            .then(respostaJSON => {
+                respostaJSON.forEach(dado => {
+                    window.location.href = "paginaSucessoLogin.html" + `?email=${dado.email}`;
+                    contaEncontrada=true;
+                })
+                if(!contaEncontrada){
+                    ntentativas++;
+                    document.querySelector(".erroLogin").textContent = "Usuário ou senha inválido(s).";
+                }
             }
-        })
-        if(!contaEncontrada){
-            ntentativas++;
-            document.querySelector(".erroLogin").textContent = "Usuário ou senha inválido(s).";
-        }
+        )})
     }
 }
 
