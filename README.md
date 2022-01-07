@@ -8,9 +8,9 @@
 
 - - [x] Juntar dois projetos anteriores em um só.
 ---
-- - [ ] Criar uma página de perfil
+- - [x] Criar uma página de perfil
 - - - [x] Dados da conta.
-- - - [ ] Quantos itens a conta tem.
+- - - [x] Quantos itens a conta tem.
 ---
 - - [ ] Criar a possibilidade de trocar a senha
 - - [ ] Criar a possibilidade de deletar a própria conta 

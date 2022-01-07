@@ -5,6 +5,14 @@ function carregaPerfil(){
         console.log(dado);
         document.querySelector(".nome-perfil").innerHTML = `Nome: ${dado[0].nome}`
         document.querySelector(".email-perfil").innerHTML = `Email: ${dado[0].email}`
+        let counter=0;
+        listaGet("")
+        .then(dados => {
+            dados.forEach(data => {
+                counter++;
+            });
+            document.querySelector(".itens-na-lista").innerHTML = `Itens em sua lista: ${counter}`;
+        })
     })
 }
 
