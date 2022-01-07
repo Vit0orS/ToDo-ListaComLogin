@@ -12,7 +12,7 @@
     function redirect(){
         if(localStorage.getItem("info")==null||localStorage.getItem("info")==""){
             localStorage.setItem("info", "Informação");
-            alert('Antes de utilizar o síte, inicie a database com "npx json-server --watch db.json"');
+            alert('Antes de utilizar o síte, inicie a database com o comando: "npx json-server --watch db.json"');
         }
         if(localStorage.getItem("user")==null||localStorage.getItem("user")==""){
             window.location.href="telas/login.html";

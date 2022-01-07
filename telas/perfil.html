@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="../img/ToDo-logos_white.png"/>
         <link rel="stylesheet" href="../assets/css/reset.css">
         <link rel="stylesheet" href="../assets/css/styleLista.css">
+        <link rel="stylesheet" href="../assets/css/stylePerfil.css">
         
         <!-- Fontes -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,43 +18,40 @@
         <!-- Fim fontes -->
 
     </head>
-    <body onload="load()">
+    <body onload="carregaPerfil()">
         <nav class="menu-navegacao">
             <h1><img class="logo-principal" src="../assets/img/ToDo-logos_transparent.png" alt="Imagem logo ToDo"></h1>
             <ul class="lista-navegacao">
-                <li class="item-lista-nav"><a href="listas.html">Home</a></li><li class="item-lista-nav botao-muda-direction" onclick="mudaDirection()">Coluna</li><li class="item-lista-nav"><a href="perfil.html">Perfil</a></li><li class="item-lista-nav"><a href="sobre.html">Sobre</a></li>
+                <li class="item-lista-nav"><a href="listas.html">Home</a></li><li class="item-lista-nav botao-muda-direction" onclick="mudaDirection()">Coluna</li><li class="item-lista-nav botao-muda-direction"><a href="perfil.html">Perfil</a></li><li class="item-lista-nav"><a href="sobre.html">Sobre</a></li>
             </ul>
             <ul class="conta">
                 <li class="item-lista-nav logadoComo"></li><li class="item-lista-nav" onclick="desconectar()"><a>Desconectar</a></li>
             </ul>
         </nav>
 
-        <main>
-            <section class="section-add-item">
-                <button class="botao-principal" onclick="mostraMenuItem()">Novo item</button>
-                <section class="menu-add-item">
-                    <form class="novo-item">
-                        <textarea rows="4" class="input-lista" placeholder="  Novo item..."></textarea>
-
-                        <label for="cor-novo-item" class="label-cor">Cor de fundo:</label>
-                        <input value="#7c7cf6" class="cor-novo-item" name="cor-novo-item" type="color">
-                        
-                        <input style="display: none;" id="id-form" readonly type="number">
-
-                        <button type="submit" class="botao-principal" onclick="adicionaLista()">Enviar</button>
-                        <button class="botao-principal botao-cancelar" class="botao-cancelar" onclick="cancelaEdicao()">Cancelar</button>  
-                    </form>
-                    
+        <main class="perfil-main">
+            <div class="perfil-flex-container">
+                <h1 class="perfil-titulo">Perfil</h1>
+                <hr style="width: 400px;">
+                <section class="informacoes-perfil">
+                    <p class="nome-perfil">Nome: </p>
+                    <p class="email-perfil">Email: </p>
                 </section>
-            </section>
+                <hr style="width: 400px;">
+                <section class="mudanca-senha">
+                    <h2 class="mudanca-senha-titulo">Mudança de senha</h2>
+                        <p class="senha-antiga">Senha antiga: </p>
+                        <input type="password" name="senhaantiga" id="inputSenhaAntiga" placeholder="Insira sua senha antiga">
+
+                        <p class="nova-senha">Nova senha: </p>
+                        <input type="password" name="novasenha" id="inputNovaSenha" placeholder="Insira sua nova senha">
+                </section>
+                <button class="botao-muda-senha">Mudar senha</button>
+                <hr style="width: 400px;">
+            </div>
         </main>
 
-        <section>
-            <ul class="lista-tarefas">
-                <!-- Tarefas -->
-            </ul>
-        </section>
-
+        <script src="../assets/js/scriptPerfil.js"></script>
         <script src="../assets/js/scriptListas.js"></script>
         <script src="../assets/controller/controller.js"></script>
     </body>

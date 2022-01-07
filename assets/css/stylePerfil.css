@@ -1,0 +1,58 @@
+.perfil-main {
+    text-align: center;
+    margin-top: 40px;
+}
+.perfil-flex-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 30px;
+
+}
+
+.perfil-titulo {
+    font-size: 5em;
+    color: rgb(32, 134, 202);
+}
+
+.mudanca-senha-titulo {
+    font-size: 2em;
+    color: rgb(32, 134, 202);
+}
+
+.informacoes-perfil {
+    font-size: 2em;
+    text-align: left;
+    align-self: flex-start;
+    padding-left: 20px;
+    color: rgb(32, 134, 202);
+}
+
+.senha-antiga, .nova-senha {
+    padding-top: 20px;
+    font-size: 1.3em;
+    color: rgb(32, 134, 202);
+}
+
+#inputSenhaAntiga, #inputNovaSenha {
+    width: 200px;
+    height: 30px;
+    font-size: 1.2em;
+}
+
+.botao-muda-senha {
+    width: 100px;
+    height: 35px;
+    color: white;
+    font-size: 1.05;
+    color: rgb(32, 134, 202);
+    border-color: white;
+    border-radius: 5px;
+}
+
+.botao-muda-senha:hover {
+    background-color: blue;
+    color: white;
+}

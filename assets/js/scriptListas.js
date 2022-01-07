@@ -6,9 +6,9 @@ async function load(){
     } else {
         direction = localStorage.getItem("direction");
         document.querySelector(".logadoComo").textContent = `Logado como: ${localStorage.getItem("user")} |`;
+        const directionList = document.getElementsByClassName("lista-tarefas")[0];
 
-        if (direction!=""){
-            const directionList = document.getElementsByClassName("lista-tarefas")[0];
+        if (direction!="" && typeof directionList !== 'undefined'){
             directionList.style.flexDirection = direction;
             const botao = document.getElementsByClassName("botao-muda-direction")[0];
             if(directionList.style.flexDirection!="row"){
@@ -18,13 +18,15 @@ async function load(){
             }
         }
 
-        const dados = await listaGet("");
+        if(typeof directionList !== 'undefined'){
+            const dados = await listaGet("");
 
-        dados.forEach(element => {
-            if(element.user==localStorage.getItem("user")){
-                criaElemento(element.texto, element.cor, element.id, element.textDecoration);
-            }
-        });
+            dados.forEach(element => {
+                if(element.user==localStorage.getItem("user")){
+                    criaElemento(element.texto, element.cor, element.id, element.textDecoration);
+                }
+            });
+        }
     }
 }
 
